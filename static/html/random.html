@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Losowe zdjęcie!</title>
+        <link rel="stylesheet" href="../style/style.css" />
+        <link rel="icon" href="../img/images.png" />
+    </head>
+    <body>
+        <div class="box">Hejka!</div>
+    </body>
+    <script>
+        fetch("/randomImg")
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                if (data.src.slice(-3) == "mp4") {
+                    console.log("video!");
+                } else if (data.src == "20230214_202817.jpg") {
+                    console.log("Specjalne zdjątko!");
+                } else {
+                    console.log("Zwykłe zdjęcie");
+                }
+            });
+    </script>
+</html>

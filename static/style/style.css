@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #feb0bd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.box {
+  background-color: white;
+  width: 400px;
+  height: 511px;
+  border-radius: 9px;
+  margin: auto;
+  margin-top: 80px;
+  -webkit-box-shadow: 0px 7px 20px 1px rgba(0, 0, 0, 0.63);
+  box-shadow: 0px 7px 20px 1px rgba(0, 0, 0, 0.63);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.image:hover img {
+  -webkit-animation: animation1 1s forwards;
+          animation: animation1 1s forwards;
+}
+
+.image img {
+  width: 135px;
+  height: 135px;
+  -webkit-animation: animation2 1s forwards;
+          animation: animation2 1s forwards;
+}
+
+@-webkit-keyframes animation1 {
+  100% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+}
+
+@keyframes animation1 {
+  100% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+}
+
+@-webkit-keyframes animation2 {
+  from {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  to {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+
+@keyframes animation2 {
+  from {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  to {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+
+.button a {
+  width: 275px;
+  height: 52px;
+  background-color: #feb0bd;
+  color: white;
+  border-radius: 103px;
+  padding-left: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-shadow: 2px 4px 6px #42445a;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-box-shadow: 0px 8px 24px 0px #42445a;
+  box-shadow: 0px 8px 24px 0px #42445a;
+}
+
+.button a:hover {
+  width: 300px;
+  height: 60px;
+  font-size: 22px;
+}
+
+.effectzero {
+  position: absolute;
+  top: -591px;
+  -webkit-animation: zero 1s forwards;
+          animation: zero 1s forwards;
+}
+
+@-webkit-keyframes zero {
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes zero {
+  100% {
+    top: 0;
+  }
+}
+
+.effectone {
+  -webkit-animation: one 3s forwards;
+          animation: one 3s forwards;
+}
+
+@-webkit-keyframes one {
+  0% {
+    opacity: 0;
+  }
+  14.29% {
+    opacity: 0;
+  }
+  28.58% {
+    opacity: 1;
+  }
+}
+
+@keyframes one {
+  0% {
+    opacity: 0;
+  }
+  14.29% {
+    opacity: 0;
+  }
+  28.58% {
+    opacity: 1;
+  }
+}
+
+.effecttwo {
+  -webkit-animation: two 3s forwards;
+          animation: two 3s forwards;
+}
+
+@-webkit-keyframes two {
+  0% {
+    opacity: 0;
+  }
+  28.58% {
+    opacity: 0;
+  }
+  42.87% {
+    opacity: 1;
+  }
+}
+
+@keyframes two {
+  0% {
+    opacity: 0;
+  }
+  28.58% {
+    opacity: 0;
+  }
+  42.87% {
+    opacity: 1;
+  }
+}
+
+.effectthree {
+  -webkit-animation: three 3s forwards;
+          animation: three 3s forwards;
+}
+
+@-webkit-keyframes three {
+  0% {
+    opacity: 0;
+  }
+  42.87% {
+    opacity: 0;
+  }
+  57.16% {
+    opacity: 1;
+  }
+}
+
+@keyframes three {
+  0% {
+    opacity: 0;
+  }
+  42.87% {
+    opacity: 0;
+  }
+  57.16% {
+    opacity: 1;
+  }
+}
+
+.effectfour {
+  -webkit-animation: four 3s forwards;
+          animation: four 3s forwards;
+}
+
+@-webkit-keyframes four {
+  0% {
+    opacity: 0;
+  }
+  57.16% {
+    opacity: 0;
+  }
+  71.45% {
+    opacity: 1;
+  }
+}
+
+@keyframes four {
+  0% {
+    opacity: 0;
+  }
+  57.16% {
+    opacity: 0;
+  }
+  71.45% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=style.css.map */
