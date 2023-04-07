@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Galeria!</title>
+        <link rel="stylesheet" href="../style/style.css" />
+        <link rel="icon" href="../img/other/images.png" />
+    </head>
+    <body>
+        <div class="galleryContainer">
+            <h1>Kliknij aby powiększyć!</h1>
+            <div id="box" class="box galleryBox">
+                <img id="loading" src="../img/other/loading.gif" alt="loading" />
+            </div>
+        </div>
+        <div id="fullSize">
+            <div>
+                <img id="X" src="../img/other/X.png" alt="X" />
+            </div>
+
+            <img id="img" src="" alt="" />
+            <p id="imgTitle"></p>
+        </div>
+    </body>
+    <script>
+        fetch("/galleryImgs")
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                data.forEach((element) => {
+                    let div = document.createElement("div");
+                    div.style.backgroundImage = `url(../img/gallery/${element.src})`;
+                    div.addEventListener("click", () => {
+                        console.log(element.title);
+                        document.getElementById("fullSize").style.left = 0;
+                        document.getElementById("img").src = `../img/gallery/${element.src}`;
+                        document.getElementById("imgTitle").innerText = element.title;
+                    });
+                    document.getElementById("box").appendChild(div);
+                });
+            })
+            .then(() => {
+                document.getElementById("loading").remove();
+            });
+
+        document.getElementById("X").addEventListener("click", () => {
+            document.getElementById("fullSize").style.left = "-100%";
+        });
+    </script>
+</html>

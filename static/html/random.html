@@ -5,10 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Losowe zdjęcie!</title>
         <link rel="stylesheet" href="../style/style.css" />
-        <link rel="icon" href="../img/images.png" />
+        <link rel="icon" href="../img/other/images.png" />
     </head>
     <body>
-        <div class="box">Hejka!</div>
+        <div id="box" class="box randomBox"></div>
     </body>
     <script>
         fetch("/randomImg")
@@ -16,12 +16,31 @@
             .then((data) => {
                 console.log(data);
                 if (data.src.slice(-3) == "mp4") {
-                    console.log("video!");
+                    document.getElementById("box").innerHTML = `
+                    <h1>${data.index + 1}/${data.max}</h1>
+                    <video controls>
+                        <source src="../video/random/${data.src}" type="video/mp4" />
+                    </video>
+                    <p>${data.title}</p>
+                    `;
                 } else if (data.src == "20230214_202817.jpg") {
-                    console.log("Specjalne zdjątko!");
+                    document.getElementById("box").innerHTML = `
+                    <h1>${data.index + 1}/${data.max}</h1>
+                    <img src="../img/random/${data.src}" alt="${data.title}" />
+                    <p>${data.title}</p>
+                    <img class="com"  src="../img/other/comment.png" alt="Ale ładna misia" />
+                    `;
                 } else {
-                    console.log("Zwykłe zdjęcie");
+                    document.getElementById("box").innerHTML = `
+                    <h1>${data.index + 1}/${data.max}</h1>
+                    <img src="../img/random/${data.src}" alt="${data.title}" />
+                    <p>${data.title}</p>
+                    `;
                 }
+                document.getElementById("box").innerHTML += `
+                    <div class="button reload">
+                        <a href="/random">Odśwież!</a>
+                    </div>`;
             });
     </script>
 </html>

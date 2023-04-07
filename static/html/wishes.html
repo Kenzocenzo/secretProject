@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Życzenia!</title>
+        <link rel="stylesheet" href="../style/style.css" />
+        <link rel="icon" href="../img/other/images.png" />
+    </head>
+    <body>
+        <template id="templ">
+            <h1><span>Wszystkiego najlepszego z okazji imienin Marysiu</span>!</h1>
+            <div class="volumes">
+                <input type="range" id="volume" min="1" max="100" value="50" />
+                <img id="volumer" src="../img/other/volume.png" alt="" />
+            </div>
+
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur, mi quis pharetra ullamcorper,
+                leo sem convallis enim, nec aliquet sapien orci sed nisi. Pellentesque sollicitudin enim iaculis turpis
+                ultricies faucibus. Mauris placerat nulla eu tellus tincidunt ultrices. Aliquam bibendum malesuada
+                condimentum. In venenatis erat ac fermentum porttitor. Nam vulputate sapien nibh. Sed viverra tortor
+                felis, a sollicitudin elit blandit sit amet. Nullam consectetur nunc quis lacus molestie, quis porta est
+                cursus. Curabitur accumsan, sapien id viverra ultricies, ipsum ex tempor ante, ut fermentum eros ex sed
+                massa. Vivamus quis commodo sem. Donec quis nibh ut velit mattis euismod. Suspendisse feugiat, purus
+                consectetur imperdiet aliquam, ipsum mauris fringilla ligula, facilisis tempor libero nisl vel nulla.
+                Donec dictum ac ligula at suscipit. Fusce et velit nec elit hendrerit efficitur. In semper erat quis
+                massa finibus, sit amet laoreet ante congue. Nulla condimentum mi magna, quis vehicula turpis venenatis
+                a. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce a
+                ultrices sapien, a sagittis sem. Fusce varius arcu id semper porta. In viverra tortor sem, quis gravida
+                nulla dapibus eget. Suspendisse leo leo, lobortis ac eleifend at, pretium eget diam. Duis vitae diam
+                urna. Sed cursus dolor efficitur arcu efficitur luctus. Nulla quis velit ullamcorper, dignissim quam sit
+                amet, accumsan nisl. Vivamus iaculis sed risus tempor auctor. Praesent porta ullamcorper lorem quis
+                congue. Aliquam vehicula est vel justo feugiat, varius tincidunt felis aliquam. Pellentesque habitant
+                morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus ex urna, volutpat eget
+                nibh non, ullamcorper vestibulum nisl. Cras faucibus egestas scelerisque. Aliquam consectetur dignissim
+                tristique. Nullam neque massa, mattis ac porttitor eu, suscipit sit amet justo. Quisque sit amet lorem
+                at risus vulputate aliquet. Praesent mollis eleifend elit, vitae gravida lacus pharetra aliquam. Quisque
+                lacus velit, suscipit nec diam non, rhoncus tincidunt urna. Fusce gravida semper sollicitudin. Phasellus
+                laoreet varius justo, id mollis dolor pellentesque non. Ut interdum, sem vel varius rhoncus, ligula
+                lectus venenatis quam, eu pretium eros tellus eget lectus. Vivamus bibendum pellentesque pulvinar. Cras
+                egestas sed nunc sed semper. Vestibulum maximus elit lectus, sit amet dictum lacus hendrerit sed.
+                Vestibulum non velit non turpis mattis consequat a et purus. Cras fringilla ipsum urna, eget hendrerit
+                augue posuere in. Proin et fermentum justo, sed molestie dui. Nullam egestas sit amet orci ut feugiat.
+                In lobortis, velit eget porta gravida, magna tortor malesuada nulla, quis gravida diam ante sed felis.
+                Sed commodo lectus vel elit commodo, sit amet placerat eros hendrerit. Phasellus lacus purus, imperdiet
+                ut elit ut, sollicitudin tempor turpis. Etiam convallis placerat cursus. Proin fermentum nisi quis
+                viverra cursus. Nam mi leo, interdum sit amet vulputate eu, viverra eget mauris. Sed eu convallis
+                sapien. Nunc laoreet mattis dui non rhoncus. Integer vitae purus magna. Aenean volutpat aliquet ante,
+                sit amet finibus purus vulputate vitae. Vivamus ullamcorper nulla eget lacus blandit, eu consectetur
+                augue tristique. Fusce accumsan a nulla sed posuere.
+            </div>
+        </template>
+
+        <div id="box" class="box intro">
+            <button id="btn">Potwierdzam, że to ja, Maria Rogatko</button>
+        </div>
+
+        <script>
+            let audio = new Audio("../sound/get_you_the_moon.mp3");
+            let ifer = true;
+            document.getElementById("btn").addEventListener("click", () => {
+                document.getElementById("box").classList.remove("intro");
+                document.getElementById("box").classList.add("wishesBox");
+                document.getElementById("box").appendChild(document.getElementById("templ").content.cloneNode(true));
+                document.getElementById("btn").remove();
+                audio.volume = 0.5;
+                audio.play();
+                document.getElementById("volume").addEventListener("input", () => {
+                    audio.volume = document.getElementById("volume").value / 100;
+                });
+                document.getElementById("volumer").addEventListener("click", () => {
+                    if (ifer) {
+                        document.getElementById("volumer").src = "../img/other/muted.png";
+                        audio.pause();
+                        ifer = false;
+                    } else {
+                        document.getElementById("volumer").src = "../img/other/volume.png";
+                        audio.play();
+                        ifer = true;
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
