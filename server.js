@@ -1,6 +1,6 @@
 var express = require("express");
 var app = express();
-const PORT = 3000;
+const PORT = process.env.port || 3000;
 var path = require("path");
 const fs = require("fs");
 const cors = require("cors");
