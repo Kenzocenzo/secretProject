@@ -5,7 +5,7 @@ var path = require("path");
 const fs = require("fs");
 const cors = require("cors");
 app.use(cors());
-app.use(express.static("static"));
+app.use(express.static(__dirname + "/static"));
 const images = require("./static/json/images.json");
 const gallery = require("./static/json/gallery.json");
 
