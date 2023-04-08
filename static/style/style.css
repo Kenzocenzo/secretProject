@@ -21,8 +21,8 @@ body {
 
 .box {
   background-color: white;
-  width: 400px;
-  height: 511px;
+  width: 450px;
+  height: 600px;
   border-radius: 9px;
   margin: auto;
   margin-top: 20px;
@@ -170,9 +170,15 @@ body {
   width: 30px;
 }
 
-.box.wishesBox div {
+.box.wishesBox .text {
   -webkit-transition-duration: 250ms;
           transition-duration: 250ms;
+}
+
+.box.wishesBox .text p,
+.box.wishesBox .text li {
+  text-indent: 20px;
+  margin-bottom: 5px;
 }
 
 .box.wishesBox .volumes {
@@ -359,6 +365,7 @@ a {
 }
 
 .effectzero {
+  margin-top: calc(50vh - 320px);
   position: absolute;
   top: -591px;
   -webkit-animation: zero 1s forwards;

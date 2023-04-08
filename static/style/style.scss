@@ -17,8 +17,8 @@ body {
 
 .box {
     background-color: white;
-    width: 400px;
-    height: 511px;
+    width: 450px;
+    height: 600px;
     border-radius: 9px;
     margin: auto;
     margin-top: 20px;
@@ -129,8 +129,14 @@ body {
             cursor: pointer;
             width: 30px;
         }
-        div {
+        .text {
             transition-duration: 250ms;
+
+            p,
+            li {
+                text-indent: 20px;
+                margin-bottom: 5px;
+            }
         }
         .volumes {
             height: 20px;
@@ -267,6 +273,7 @@ a {
 }
 
 .effectzero {
+    margin-top: calc(50vh - 320px);
     position: absolute;
     top: -591px;
     animation: zero 1s forwards;
