@@ -29,6 +29,11 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    @media only screen and (max-width: 450px) {
+        & {
+            width: 90%;
+        }
+    }
     &.randomBox {
         padding: 30px;
         width: 80%;
@@ -46,6 +51,11 @@ body {
             min-width: 400px;
             min-height: 300px;
             object-fit: contain;
+            @media only screen and (max-width: 450px) {
+                & {
+                    min-width: 350px;
+                }
+            }
             &.com {
                 min-height: 1px;
             }
@@ -192,6 +202,11 @@ body {
         max-height: 90%;
         object-fit: contain;
         margin-bottom: 15px;
+        @media only screen and (max-width: 450px) {
+            & {
+                max-height: 80%;
+            }
+        }
     }
     p {
         color: white;

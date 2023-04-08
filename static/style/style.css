@@ -44,6 +44,12 @@ body {
           align-items: center;
 }
 
+@media only screen and (max-width: 450px) {
+  .box {
+    width: 90%;
+  }
+}
+
 .box.randomBox {
   padding: 30px;
   width: 80%;
@@ -65,6 +71,13 @@ body {
   min-height: 300px;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+@media only screen and (max-width: 450px) {
+  .box.randomBox img,
+  .box.randomBox video {
+    min-width: 350px;
+  }
 }
 
 .box.randomBox img.com,
@@ -258,6 +271,12 @@ body {
   -o-object-fit: contain;
      object-fit: contain;
   margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 450px) {
+  #fullSize img {
+    max-height: 80%;
+  }
 }
 
 #fullSize p {
