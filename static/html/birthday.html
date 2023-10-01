@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Urodziny!</title>
+        <link rel="stylesheet" href="../style/style.css" />
+        <link rel="icon" href="../img/other/images.png" />
+    </head>
+    <body>
+        <template id="templ">
+            <h1><span>Wszystkiego najlepszego z okazji urodzin Marysiu</span>!</h1>
+            <div class="volumes">
+                <input type="range" id="volume" min="1" max="100" value="50" />
+                <img id="volumer" src="../img/other/volume.png" alt="" />
+            </div>
+
+            <div class="text">
+                <p style="text-indent: 20px">No i cóż, to 10 październik! Urodziny!</p>
+
+                <p>Wszystkiego najlepszego Marysiu!</p>
+                <p>Aleks "Kenzocenzo, Chuj" Rogoziński</p>
+            </div>
+        </template>
+
+        <div id="box" class="box birthday">
+            <input type="text" id="password" />
+            <button id="btn">Sprawdź hasło</button>
+            <ol id="list">
+                <li>Imię najwspanialszego pluszowego dinozaura</li>
+                <li>Postać z profilowego Aleksa (główny bohater jego ulubionej mangi)</li>
+                <li>Miesiąc poznania Aleksa i Marysi</li>
+                <li>Gra planszowa na którą Aleks długo czekał, Marysia chciała z nim zagrać. Wiedźmin...</li>
+                <li>Marysia dała to Aleksowi podczas ich pierwszego spotkania. Jej dobry...</li>
+                <li>Imię listonosza, który dostarczył pierwszą wiadomość od Aleksa do Marysi</li>
+                <li>
+                    Piosenka, która często przewijała się przez znajomość Aleksa i Marysi. Wspólne słuchanie, śpiewanie,
+                    w prezentach, itd.
+                </li>
+            </ol>
+        </div>
+
+        <script>
+            let audio = new Audio("../sound/get_you_the_moon.mp3");
+            let ifer = true;
+            document.getElementById("btn").addEventListener("click", () => {
+                let password = document.getElementById("password").value;
+                const data = { password };
+                fetch("/password", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        if (data.status == "ok") {
+                            document.getElementById("box").classList.remove("birthday");
+                            document.getElementById("box").classList.add("wishesBox");
+                            document
+                                .getElementById("box")
+                                .appendChild(document.getElementById("templ").content.cloneNode(true));
+                            document.getElementById("btn").remove();
+                            document.getElementById("password").remove();
+                            document.getElementById("list").remove();
+                            audio.volume = 0.5;
+                            audio.play();
+                            document.getElementById("volume").addEventListener("input", () => {
+                                audio.volume = document.getElementById("volume").value / 100;
+                            });
+                            document.getElementById("volumer").addEventListener("click", () => {
+                                if (ifer) {
+                                    document.getElementById("volumer").src = "../img/other/muted.png";
+                                    audio.pause();
+                                    ifer = false;
+                                } else {
+                                    document.getElementById("volumer").src = "../img/other/volume.png";
+                                    audio.play();
+                                    ifer = true;
+                                }
+                            });
+                        } else {
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error);
+                    });
+            });
+        </script>
+    </body>
+</html>

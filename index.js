@@ -8,6 +8,8 @@ app.use(cors());
 app.use(express.static(__dirname + "/static"));
 const images = require("./static/json/images.json");
 const gallery = require("./static/json/gallery.json");
+const bodyParser = require("body-parser");
+app.use(express.json());
 
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname + "/static/html/index.html"));
@@ -15,6 +17,10 @@ app.get("/", function (req, res) {
 
 app.get("/wishes", function (req, res) {
     res.sendFile(path.join(__dirname + "/static/html/wishes.html"));
+});
+
+app.get("/birthday", function (req, res) {
+    res.sendFile(path.join(__dirname + "/static/html/birthday.html"));
 });
 
 app.get("/random", function (req, res) {
@@ -32,6 +38,14 @@ app.get("/gallery", function (req, res) {
 
 app.get("/galleryImgs", function (req, res) {
     res.send(JSON.stringify(gallery));
+});
+
+app.post("/password", function (req, res) {
+    let x = req.body.password;
+    x = x.toLowerCase();
+    x = x.trim();
+    if (x == "aisyram") res.send(JSON.stringify({ status: "ok" }));
+    else res.send(JSON.stringify({ status: "error" }));
 });
 
 app.listen(PORT, function () {
