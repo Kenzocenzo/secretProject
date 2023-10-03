@@ -251,11 +251,20 @@ body {
   font-variant: small-caps;
 }
 
+.box.wishesBox h1 {
+  text-align: center;
+}
+
+.box.wishesBox h1 span {
+  font-family: headerFont;
+  font-variant: small-caps;
+}
+
 .box.wishesBox input[type="range"]::-webkit-slider-thumb {
   cursor: ew-resize;
 }
 
-.box.wishesBox img {
+.box.wishesBox #volumer {
   cursor: pointer;
   width: 30px;
 }
@@ -285,6 +294,16 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 10px;
+}
+
+.box.wishesBox .reason {
+  margin-top: 20px;
+}
+
+.box.wishesBox .reason img {
+  width: 100%;
+  border: 6px solid black;
+  border-radius: 10px;
 }
 
 .galleryContainer h1 {

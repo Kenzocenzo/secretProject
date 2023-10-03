@@ -191,11 +191,19 @@ body {
             }
         }
 
+        h1 {
+            text-align: center;
+            span {
+                font-family: headerFont;
+                font-variant: small-caps;
+            }
+        }
+
         input[type="range"]::-webkit-slider-thumb {
             cursor: ew-resize;
         }
 
-        img {
+        #volumer {
             cursor: pointer;
             width: 30px;
         }
@@ -216,6 +224,14 @@ body {
             gap: 10px;
             align-items: center;
             margin-bottom: 10px;
+        }
+        .reason {
+            margin-top: 20px;
+            img {
+                width: 100%;
+                border: 6px solid black;
+                border-radius: 10px;
+            }
         }
     }
 }
