@@ -231,6 +231,11 @@ body {
                 width: 100%;
                 border: 6px solid black;
                 border-radius: 10px;
+                &.portal {
+                    border: none;
+                    border-radius: 0%;
+                    width: 100%;
+                }
             }
         }
     }
