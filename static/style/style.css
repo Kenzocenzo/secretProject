@@ -312,7 +312,7 @@ body {
   width: 100%;
 }
 
-.box.wishesBox .reason:last-child {
+.box.wishesBox .reason.last {
   margin-bottom: 10px;
 }
 
