@@ -312,6 +312,10 @@ body {
   width: 100%;
 }
 
+.box.wishesBox .reason:last-child {
+  margin-bottom: 10px;
+}
+
 .galleryContainer h1 {
   margin-top: 10px;
   text-align: center;
